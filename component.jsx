@@ -27,16 +27,22 @@ class Component extends mixin(connect(Store)) {
                 <Modal.Footer>
                     <ButtonToolbar>
                         <Button bsStyle='info' onClick={Actions.sure.bind(Actions)}>
-                            {this.props.ok}
+                            {this.props.sure}
                         </Button>
                         <Button autoFocus bsStyle='danger' onClick={this.cancel.bind(this)}>
-                            {this.props.ok}
+                            {this.props.cancel}
                         </Button>
                     </ButtonToolbar>
                 </Modal.Footer>
             </Modal>
         )
     }
+}
+
+Component.propTypes = {
+    title: PropTypes.string,
+    sure: PropTypes.string,
+    cancel: PropTypes.string
 }
 
 export default Component;
